@@ -38,14 +38,9 @@ function nbYear(p0, percent, aug, p) {
   while (year < p) {
   year = p0 + Math.floor((p0 * (percent / 100))) + aug  
   result++;
-    p0 = year;
-  
-   
-    
+    p0 = year;  
   }
    return result;
-
-
 }
 
 
