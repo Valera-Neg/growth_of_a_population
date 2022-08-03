@@ -1,5 +1,8 @@
 /*
-In a small town the population is p0 = 1000 at the beginning of a year. The population regularly increases by 2 percent per year and moreover 50 new inhabitants per year come to live in the town. How many years does the town need to see its population greater or equal to p = 1200 inhabitants?
+In a small town the population is p0 = 1000 at the beginning of a year. 
+The population regularly increases by 2 percent per year and moreover 
+50 new inhabitants per year come to live in the town. How many years does 
+the town need to see its population greater or equal to p = 1200 inhabitants?
 
 At the end of the first year there will be: 
 1000 + 1000 * 0.02 + 50 => 1070 inhabitants
@@ -23,20 +26,29 @@ Examples:
 nb_year(1500, 5, 100, 5000) -> 15
 nb_year(1500000, 2.5, 10000, 2000000) -> 10
 Note:
-Don't forget to convert the percent parameter as a percentage in the body of your function: if the parameter percent is 2 you have to convert it to 0.02.
+Don't forget to convert the percent parameter as a percentage 
+in the body of your function: if the parameter percent is 2 
+you have to convert it to 0.02.
 */
 
 
 function nbYear(p0, percent, aug, p) {
   let result = 0;
   let  year = 0;
-  while (p >= year) {
-   year = Math.floor(p0 + p0 * (percent / 100) + aug)   
+  while (year < p) {
+  year = p0 + Math.floor((p0 * (percent / 100))) + aug  
+  result++;
     p0 = year;
-    result++;
+  
+   
+    
   }
    return result;
+
+
 }
+
+
 
 console.log(nbYear(1000, 2, 50, 1200))  //=> 3
 console.log(nbYear(1500, 5, 100, 5000))  //=> 15
